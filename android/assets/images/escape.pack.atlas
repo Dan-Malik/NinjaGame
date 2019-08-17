@@ -1,0 +1,195 @@
+
+escape.pack.png
+size: 512,64
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+arrow
+  rotate: false
+  xy: 122, 5
+  size: 25, 5
+  orig: 25, 5
+  offset: 0, 0
+  index: -1
+door
+  rotate: false
+  xy: 301, 9
+  size: 12, 16
+  orig: 12, 16
+  offset: 0, 0
+  index: -1
+enemy
+  rotate: false
+  xy: 270, 33
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+enemy-2
+  rotate: false
+  xy: 270, 2
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+fire1
+  rotate: false
+  xy: 122, 12
+  size: 38, 50
+  orig: 38, 50
+  offset: 0, 0
+  index: -1
+fire2
+  rotate: false
+  xy: 162, 12
+  size: 38, 50
+  orig: 38, 50
+  offset: 0, 0
+  index: -1
+fire3
+  rotate: false
+  xy: 202, 12
+  size: 34, 50
+  orig: 34, 50
+  offset: 0, 0
+  index: -1
+fire4
+  rotate: false
+  xy: 238, 25
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+fire5
+  rotate: false
+  xy: 301, 44
+  size: 16, 18
+  orig: 16, 18
+  offset: 0, 0
+  index: -1
+fire6
+  rotate: false
+  xy: 335, 47
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+fire7
+  rotate: false
+  xy: 461, 53
+  size: 8, 9
+  orig: 8, 9
+  offset: 0, 0
+  index: -1
+fire8
+  rotate: false
+  xy: 251, 14
+  size: 8, 9
+  orig: 8, 9
+  offset: 0, 0
+  index: -1
+jumping-left
+  rotate: false
+  xy: 301, 27
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+jumping-right
+  rotate: false
+  xy: 319, 47
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+pixel
+  rotate: false
+  xy: 122, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+platform
+  rotate: false
+  xy: 2, 4
+  size: 58, 58
+  orig: 58, 58
+  offset: 0, 0
+  index: -1
+platform2
+  rotate: false
+  xy: 62, 4
+  size: 58, 58
+  orig: 58, 58
+  offset: 0, 0
+  index: -1
+spike
+  rotate: false
+  xy: 301, 2
+  size: 13, 5
+  orig: 13, 5
+  offset: 0, 0
+  index: -1
+spike - Copy
+  rotate: false
+  xy: 238, 12
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+standing-left
+  rotate: false
+  xy: 349, 46
+  size: 12, 16
+  orig: 12, 16
+  offset: 0, 0
+  index: -1
+standing-right
+  rotate: false
+  xy: 363, 46
+  size: 12, 16
+  orig: 12, 16
+  offset: 0, 0
+  index: -1
+walk-1-left
+  rotate: false
+  xy: 377, 47
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+walk-1-right
+  rotate: false
+  xy: 391, 47
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+walk-2-left
+  rotate: false
+  xy: 405, 47
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+walk-2-right
+  rotate: false
+  xy: 419, 47
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+walk-3-left
+  rotate: false
+  xy: 433, 47
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+walk-3-right
+  rotate: false
+  xy: 447, 47
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
