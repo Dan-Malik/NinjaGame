@@ -6,8 +6,9 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Constants {
 
-    public static final Color BACKGROUND_COLOR = Color.CHARTREUSE;
-    public static final float WORLD_SIZE = 128;
+    public static final Color BACKGROUND_COLOR = Color.GOLDENROD;
+    public static final float WORLD_SIZE = 256;
+    public static final float MAP_LEFT_LIMIT = 0;
 
     //SPRITE STUFF
 
@@ -44,8 +45,9 @@ public class Constants {
     public static final float WALK_LOOP_TIME = 0.10f;
 
     public static final float PLAYER_MOVE_SPEED = 96;
-    public static final float JUMP_SPEED = 1.25f * WORLD_SIZE;
+    public static final float JUMP_SPEED = 0.625f * WORLD_SIZE;
     public static final float MAX_JUMP_TIME = 0.25f;
     public static final float GRAVITY = 1000;
+
 
 }

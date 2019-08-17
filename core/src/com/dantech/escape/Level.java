@@ -55,11 +55,25 @@ public class Level {
     }
 
     void initTestLevel(){
-        hollowPlatforms.add(new HollowPlatform(-50, 0, 71, 20, false));
-        hollowPlatforms.add(new HollowPlatform(-100, -40, 1000, 30,false));
-        solidPlatforms.add(new SolidPlatform(40,10,59,61,false));
-        hazards.add(new Fire(new Vector2(0,0)));
+        hollowPlatforms.add(new HollowPlatform(-50, 30, 71, 10, false));
+        hollowPlatforms.add(new HollowPlatform(-100, 60, 71, 10, false));
+        hollowPlatforms.add(new HollowPlatform(-50, 90, 71, 10, false));
+        hollowPlatforms.add(new HollowPlatform(-100, 120, 71, 10, false));
+        hollowPlatforms.add(new HollowPlatform(-50, 150, 71, 10, false));
+        hollowPlatforms.add(new HollowPlatform(-100, 180, 71, 10, false));
 
-        player = new Player(new Vector2(-40,20));
+        hollowPlatforms.add(new HollowPlatform(130, 30, 71, 10, false));
+
+
+        hollowPlatforms.add(new HollowPlatform(-172, 0, 1000, 40,false));
+
+
+        solidPlatforms.add(new SolidPlatform(40,47,40,47,false));
+
+        hazards.add(new Hazard(new Vector2(40,47)));
+        hazards.add(new Hazard(new Vector2(52,47)));
+
+
+        player = new Player(new Vector2(-140,50));
     }
 }

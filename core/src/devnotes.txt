@@ -4,14 +4,13 @@ HollowPlatform
 
 To implement:
 MovingPlatform (or implement optional movement to other platforms)
-Gears
+Fire
 Spikes
 Exit door
 
 
 
 Need to try and zoom out camera a bit.
-Death and lives system
 Level system and level design
 Background needs changing/making different ones for each level
 Intro screen

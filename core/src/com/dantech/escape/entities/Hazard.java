@@ -18,7 +18,7 @@ public class Hazard {
     public boolean animated = false;
     float width = left-right;
     float height = top-bottom;
-    TextureRegion region = Assets.instance.escapeAssets.spike;
+    TextureRegion region = Assets.instance.hazardAssets.spike;
 
     public Hazard(Vector2 position){
         this.position = position;

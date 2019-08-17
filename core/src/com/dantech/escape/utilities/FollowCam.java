@@ -14,11 +14,13 @@ public class FollowCam {
     }
 
     public void update() {
-        if(player.position.x>-70){
-        cam.position.x = player.position.x;
+        if (player.position.x > Constants.MAP_LEFT_LIMIT) {
+            cam.position.x = player.position.x;
+        } else {
+            cam.position.x = Constants.MAP_LEFT_LIMIT;
         }
-//        cam.position.y = player.position.y+25;
-    }
+        cam.position.y = Constants.WORLD_SIZE / 2 - Constants.WORLD_SIZE / 8;
 
+    }
 
 }

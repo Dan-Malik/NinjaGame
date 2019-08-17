@@ -67,20 +67,11 @@ public class Player {
             walkState = walkState.NOT_WALKING;
         }
 
-
-//        SHIT IS BROKEN, either fix rectangles for collision or switch to old collision technique
-//
-//        Rectangle playerBoundaries = new Rectangle(position.x,position.y,11,14);
-//
-//        for(Hazard hazard: hazards){
-//            Rectangle hazardBoundaries = new Rectangle(hazard.left,hazard.bottom,hazard.width,hazard.height);
-//            if(playerBoundaries.overlaps(hazardBoundaries)){
-//                Gdx.app.log("Overlap","Triggered");
-//            }
-//
-//        }
-
-
+        for (Hazard hazard: hazards){
+            if(checkHazardCollision(hazard)){
+                init();
+            }
+        }
 
 
         for (SolidPlatform platform: solidPlatforms){
@@ -171,14 +162,15 @@ public class Player {
         }
     }
 
-//    boolean checkHazardCollision(Hazard hazard){
-//        if((position.x + 11 >=hazard.left && position.x <= hazard.right)&&
-//                ((position.y+1 >= hazard.bottom && position.y +1 <= hazard.top)||
-//                (position.y+14 >=hazard.bottom && position.y+14<=hazard.top))){
-//            return true;
-//        }
-//        return false;
-//    }
+    //I THINK THIS IS BAD CODE, ONLY WORKS FOR SPIKES, IT IS BROKEN
+    boolean checkHazardCollision(Hazard hazard){
+        if((position.x + 11 >=hazard.left && position.x <= hazard.right)&&
+                ((position.y+1 >= hazard.bottom && position.y +1 <= hazard.top)||
+                (position.y+14 >=hazard.bottom && position.y+14<=hazard.top))){
+            return true;
+        }
+        return false;
+    }
 
     boolean checkPlatformLanding(Platform platform) {
         boolean leftFootIn = false;
@@ -237,23 +229,28 @@ public class Player {
     public void render(SpriteBatch sb){
         TextureRegion region = Assets.instance.escapeAssets.standingRight;
 
-        if (facing == PlayerFacing.RIGHT && jumpState != JumpState.GROUND) {
-            region = Assets.instance.escapeAssets.jumpingRight;
-        } else if (facing == PlayerFacing.RIGHT && walkState == WalkState.NOT_WALKING) {
-            region = Assets.instance.escapeAssets.standingRight;
-        } else if (facing == PlayerFacing.RIGHT && walkState == WalkState.WALKING) {
-            float walkTimeSeconds = MathUtils.nanoToSec * (TimeUtils.nanoTime() - walkStartTime);
-            region = (TextureRegion) Assets.instance.escapeAssets.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
-        } else if (facing == PlayerFacing.LEFT && jumpState != JumpState.GROUND) {
-            region = Assets.instance.escapeAssets.jumpingLeft;
-        } else if (facing == PlayerFacing.LEFT && walkState == WalkState.NOT_WALKING) {
-            region = Assets.instance.escapeAssets.standingLeft;
-        } else if (facing == PlayerFacing.LEFT && walkState == WalkState.WALKING) {
-            float walkTimeSeconds = MathUtils.nanoToSec * (TimeUtils.nanoTime() - walkStartTime);
-            region = (TextureRegion) Assets.instance.escapeAssets.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
+        if(facing == PlayerFacing.LEFT) {
+            if (jumpState != JumpState.GROUND) {
+                region = Assets.instance.escapeAssets.jumpingLeft;
+            } else if (walkState == WalkState.WALKING) {
+                float walkTimeSeconds = MathUtils.nanoToSec * (TimeUtils.nanoTime() - walkStartTime);
+                region = (TextureRegion) Assets.instance.escapeAssets.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
+            } else if (walkState == WalkState.NOT_WALKING) {
+                region = Assets.instance.escapeAssets.standingLeft;
+            }
+        } else {
+                if (jumpState != JumpState.GROUND) {
+                    region = Assets.instance.escapeAssets.jumpingRight;
+                } else if (walkState == WalkState.WALKING) {
+                    float walkTimeSeconds = MathUtils.nanoToSec * (TimeUtils.nanoTime() - walkStartTime);
+                    region = (TextureRegion) Assets.instance.escapeAssets.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
+                } else if (walkState == WalkState.NOT_WALKING) {
+                    region = Assets.instance.escapeAssets.standingRight;
+                }
         }
 
         DrawingUtil.drawTextureRegion(sb, region, position.x,position.y);
+        DrawingUtil.drawTextureRegion(sb,Assets.instance.escapeAssets.pixel, position.x,position.y);
     }
 
     enum PlayerFacing {

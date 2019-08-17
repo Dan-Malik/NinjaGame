@@ -65,7 +65,6 @@ public class Assets implements Disposable, AssetErrorListener {
         public final Animation walkingLeftAnimation;
         public final Animation walkingRightAnimation;
 
-        public final AtlasRegion spike;
         public final AtlasRegion pixel;
 
 
@@ -77,7 +76,6 @@ public class Assets implements Disposable, AssetErrorListener {
             jumpingLeft = atlas.findRegion(Constants.JUMPING_LEFT);
             walkingRight = atlas.findRegion(Constants.WALKING_RIGHT_2);
             walkingLeft = atlas.findRegion(Constants.WALKING_LEFT_2);
-            spike = atlas.findRegion(Constants.SPIKE);
             pixel = atlas.findRegion("pixel");
 
             Array<AtlasRegion> walkingLeftSprites = new Array<AtlasRegion>();
@@ -106,11 +104,16 @@ public class Assets implements Disposable, AssetErrorListener {
         public final Animation burningFlame;
         public final AtlasRegion fire1;
         public final AtlasRegion fire2;
+        public final AtlasRegion spike;
+
+
 
         public HazardAssets(TextureAtlas atlas){
 
             fire1 = atlas.findRegion(Constants.FIRE_1);
             fire2 = atlas.findRegion(Constants.FIRE_2);
+            spike = atlas.findRegion(Constants.SPIKE);
+
 
             Array<AtlasRegion> burningFlameSprites = new Array<AtlasRegion>();
 
