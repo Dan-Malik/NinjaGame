@@ -13,6 +13,7 @@ public class Fire extends Hazard {
 
     long loopStartTime;
     public boolean animated = true;
+    TextureRegion region = Assets.instance.hazardAssets.fire1;
 
     public Fire(Vector2 position) {
         super(position);

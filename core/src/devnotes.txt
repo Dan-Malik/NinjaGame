@@ -5,15 +5,14 @@ HollowPlatform
 To implement:
 MovingPlatform (or implement optional movement to other platforms)
 Fire
-Spikes
-Exit door
+Exit door±
 
 
 
-Need to try and zoom out camera a bit.
 Level system and level design
 Background needs changing/making different ones for each level
 Intro screen
+Level select screen and save level data on phone
 Options menu
 Pause game
 Timed levels?

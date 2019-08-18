@@ -65,13 +65,13 @@ public class Level {
         hollowPlatforms.add(new HollowPlatform(130, 30, 71, 10, false));
 
 
-        hollowPlatforms.add(new HollowPlatform(-172, 0, 1000, 40,false));
+        solidPlatforms.add(new SolidPlatform(-172, 0, 800, 40,false));
 
-
-        solidPlatforms.add(new SolidPlatform(40,47,40,47,false));
+        solidPlatforms.add(new SolidPlatform(40,47,37,47,false));
 
         hazards.add(new Hazard(new Vector2(40,47)));
         hazards.add(new Hazard(new Vector2(52,47)));
+        hazards.add(new Hazard(new Vector2(64,47)));
 
 
         player = new Player(new Vector2(-140,50));

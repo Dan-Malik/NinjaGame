@@ -6,7 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Constants {
 
-    public static final Color BACKGROUND_COLOR = Color.GOLDENROD;
+    public static final Color BACKGROUND_COLOR = Color.LIGHT_GRAY;
     public static final float WORLD_SIZE = 256;
     public static final float MAP_LEFT_LIMIT = 0;
 
