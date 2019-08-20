@@ -13,6 +13,10 @@ public class Constants {
     //SPRITE STUFF
 
     public static final String TEXTURE_ATLAS = "images/escape.pack.atlas";
+
+
+    public static final String MENU_BG = "menubg";
+    public static final String LOGO = "logo";
     public static final String STANDING_RIGHT = "standing-right";
     public static final String STANDING_LEFT = "standing-left";
     public static final String JUMPING_RIGHT = "jumping-right";
