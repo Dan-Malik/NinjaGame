@@ -4,9 +4,10 @@ HollowPlatform
 
 To implement:
 MovingPlatform (or implement optional movement to other platforms)
+Platform that breaks after being stepped on
 Fire
-Exit door±
-
+Exit door
+Arrows
 
 
 Level system and level design
