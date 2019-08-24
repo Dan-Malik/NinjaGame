@@ -65,6 +65,8 @@ public class Assets implements Disposable, AssetErrorListener {
         public final Animation walkingLeftAnimation;
         public final Animation walkingRightAnimation;
 
+        public final AtlasRegion door;
+
         public final AtlasRegion pixel;
 
 
@@ -76,6 +78,8 @@ public class Assets implements Disposable, AssetErrorListener {
             jumpingLeft = atlas.findRegion(Constants.JUMPING_LEFT);
             walkingRight = atlas.findRegion(Constants.WALKING_RIGHT_2);
             walkingLeft = atlas.findRegion(Constants.WALKING_LEFT_2);
+
+            door = atlas.findRegion(Constants.DOOR);
             pixel = atlas.findRegion("pixel");
 
             Array<AtlasRegion> walkingLeftSprites = new Array<AtlasRegion>();

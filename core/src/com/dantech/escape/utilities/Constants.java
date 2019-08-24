@@ -17,6 +17,12 @@ public class Constants {
 
     public static final String MENU_BG = "menubg";
     public static final String LOGO = "logo";
+    public static final String MENU_PLAY_BTN = "playbtn";
+    public static final String MENU_SETTINGS_BTN = "settingsbtn";
+    public static final String MENU_QUESTION_BTN = "questionbtn";
+
+
+
     public static final String STANDING_RIGHT = "standing-right";
     public static final String STANDING_LEFT = "standing-left";
     public static final String JUMPING_RIGHT = "jumping-right";
@@ -30,8 +36,8 @@ public class Constants {
     public static final String PLATFORM_SPRITE_1 = "platform";
     public static final String PLATFORM_SPRITE_2 = "platform2";
     public static final String SPIKE = "spike";
-    public static final String ENEMY1 = "enemy";
-    public static final String ENEMY2 = "enemy-2";
+    public static final String DOOR ="door" ;
+
     public static final String FIRE_1 = "fire1";
     public static final String FIRE_2 = "fire2";
     public static final String FIRE_3 = "fire3";

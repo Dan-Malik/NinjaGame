@@ -250,7 +250,7 @@ public class Player {
         }
 
         DrawingUtil.drawTextureRegion(sb, region, position.x,position.y);
-        DrawingUtil.drawTextureRegion(sb,Assets.instance.escapeAssets.pixel, position.x,position.y);
+//        DrawingUtil.drawTextureRegion(sb,Assets.instance.escapeAssets.pixel, position.x,position.y);
     }
 
     enum PlayerFacing {

@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.dantech.escape.entities.Door;
 import com.dantech.escape.entities.Fire;
 import com.dantech.escape.entities.HollowPlatform;
 import com.dantech.escape.entities.Platform;
@@ -18,12 +19,12 @@ public class Level {
     Array<HollowPlatform> hollowPlatforms;
     Array<SolidPlatform> solidPlatforms;
     Array<Hazard> hazards;
+    Door door;
 
     public Level(){
         hollowPlatforms = new Array<HollowPlatform>();
         solidPlatforms = new Array<SolidPlatform>();
         hazards = new Array<Hazard>();
-
         initTestLevel();
 
     }
@@ -31,7 +32,7 @@ public class Level {
     public void update(float delta){
 
         for (Hazard hazard: hazards){
-            if(hazard.animated == false){
+            if(hazard.animated == true){
                 hazard.update(delta);
             }
         }
@@ -50,20 +51,21 @@ public class Level {
             hazard.render(sb);
         }
 
+        door.render(sb);
+
         player.render(sb);
         sb.end();
     }
 
     void initTestLevel(){
+        door = new Door(new Vector2(500,0));
         hollowPlatforms.add(new HollowPlatform(-50, 30, 71, 10, false));
         hollowPlatforms.add(new HollowPlatform(-100, 60, 71, 10, false));
         hollowPlatforms.add(new HollowPlatform(-50, 90, 71, 10, false));
         hollowPlatforms.add(new HollowPlatform(-100, 120, 71, 10, false));
         hollowPlatforms.add(new HollowPlatform(-50, 150, 71, 10, false));
-        hollowPlatforms.add(new HollowPlatform(-100, 180, 71, 10, false));
 
         hollowPlatforms.add(new HollowPlatform(130, 30, 71, 10, false));
-
 
         solidPlatforms.add(new SolidPlatform(-270, 0, 800, 40,false));
         solidPlatforms.add(new SolidPlatform(-200, 300, 40, 400, false));
