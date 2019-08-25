@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.dantech.escape.utilities.Assets;
 import com.dantech.escape.utilities.Constants;
 import com.dantech.escape.utilities.FollowCam;
+import com.dantech.escape.utilities.LevelGenerator;
 
 class PlayScreen extends ScreenAdapter {
 
@@ -16,7 +17,6 @@ class PlayScreen extends ScreenAdapter {
 
     Level level;
     SpriteBatch sb;
-    ShapeRenderer renderer;
     ExtendViewport viewport;
 
     private FollowCam followCam;
@@ -26,8 +26,7 @@ class PlayScreen extends ScreenAdapter {
 
         Assets.instance.init();
         sb = new SpriteBatch();
-        level  = new Level();
-        renderer = new ShapeRenderer();
+        level  = LevelGenerator.generate(1,viewport);
         viewport = new ExtendViewport(Constants.WORLD_SIZE, Constants.WORLD_SIZE);
         followCam = new FollowCam(viewport.getCamera(), level.player);
     }

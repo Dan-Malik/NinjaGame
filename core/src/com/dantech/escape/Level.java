@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.viewport.Viewport;
 import com.dantech.escape.entities.Door;
 import com.dantech.escape.entities.Fire;
 import com.dantech.escape.entities.HollowPlatform;
@@ -11,21 +12,24 @@ import com.dantech.escape.entities.Platform;
 import com.dantech.escape.entities.Player;
 import com.dantech.escape.entities.SolidPlatform;
 import com.dantech.escape.entities.Hazard;
+import com.dantech.escape.entities.Spike;
 
 
 public class Level {
 
-    Player player;
-    Array<HollowPlatform> hollowPlatforms;
-    Array<SolidPlatform> solidPlatforms;
-    Array<Hazard> hazards;
-    Door door;
+    Viewport viewport;
+    public Player player;
+    public Array<HollowPlatform> hollowPlatforms;
+    public Array<SolidPlatform> solidPlatforms;
+    public Array<Hazard> hazards;
+    public Door door;
 
-    public Level(){
+    public Level(Viewport viewport){
+        this.viewport = viewport;
         hollowPlatforms = new Array<HollowPlatform>();
         solidPlatforms = new Array<SolidPlatform>();
         hazards = new Array<Hazard>();
-        initTestLevel();
+//        initTestLevel();
 
     }
 
@@ -71,9 +75,9 @@ public class Level {
         solidPlatforms.add(new SolidPlatform(-200, 300, 40, 400, false));
         solidPlatforms.add(new SolidPlatform(40,47,37,47,false));
 
-        hazards.add(new Hazard(new Vector2(40,47)));
-        hazards.add(new Hazard(new Vector2(52,47)));
-        hazards.add(new Hazard(new Vector2(64,47)));
+        hazards.add(new Spike(new Vector2(40,47)));
+        hazards.add(new Spike(new Vector2(52,47)));
+        hazards.add(new Spike(new Vector2(64,47)));
 
         player = new Player(new Vector2(-140,50));
     }
