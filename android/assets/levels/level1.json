@@ -1,26 +1,87 @@
 {
-"levelNumber":1,
-"platforms":[{
-"type":"solid",
-"moving":"false",
-"left":-270,
-"top":0,
-"width":800,
-"height":40
-}
-{
-"type":"solid",
-"left":-200,
-"top":300,
-"width":40,
-"height":400,
-"moving":"false"
-}],
-"hazards":[{"type":"spike",
-"x":40,"y":47},{"type":"spike",
-"x":52,"y":47},{"type":"spike",
-"x":64,"y":47}],
-"player":[-140,50],
-"door":[500,0]
+  "levelNumber": 1,
+  "platforms": [
+    {
+      "type": "solid",
+      "moving": false,
+      "left": -270,
+      "top": 0,
+      "width": 800,
+      "height": 40
+    },
+    {
+      "type": "solid",
+      "left": -200,
+      "top": 300,
+      "width": 40,
+      "height": 400,
+      "moving": false
+    },
+    {
+      "type": "solid",
+      "left": 40,
+      "top": 47,
+      "width": 37,
+      "height": 47,
+      "moving": false
+    },
+    {
+      "type": "hollow",
+      "left": -50,
+      "top": 150,
+      "width": 71,
+      "height": 10,
+      "moving": false
+    },
+    {
+      "type": "hollow",
+      "left": -50,
+      "top": 90,
+      "width": 71,
+      "height": 10,
+      "moving": false
+    },
+    {
+      "type": "hollow",
+      "left": -50,
+      "top": 30,
+      "width": 71,
+      "height": 10,
+      "moving": false
+    },
+    {
+      "type": "hollow",
+      "left": -100,
+      "top": 60,
+      "width": 71,
+      "height": 10,
+      "moving": false
+    }
+  ],
+  "hazards": [
+    {
+      "type": "spike",
+      "x": 40,
+      "y": 47
+    },
+    {
+      "type": "spike",
+      "x": 52,
+      "y": 47
+    },
+    {
+      "type": "spike",
+      "x": 64,
+      "y": 47
+    }
+  ],
+  "player": [
+    -140,
+    50
+  ],
+  "door": [
+    500,
+    0
+  ]
 }
 
