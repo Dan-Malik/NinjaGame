@@ -97,14 +97,23 @@ public class Player {
                     position.y = platform.top;
                 }
             }
-            for (SolidPlatform platform : solidPlatforms){
-                if (checkPlatformLanding(platform)){
-                    velocity.y = 0;
-                    jumpState = JumpState.GROUND;
-                    position.y = platform.top;
-                }
+        }
+
+
+        for (SolidPlatform platform : solidPlatforms){
+            if (checkPlatformLanding(platform) && jumpState != JumpState.JUMPING){
+                velocity.y = 0;
+                jumpState = JumpState.GROUND;
+                position.y = platform.top;
+            }
+            if(checkSolidPlatformHeadCollision(platform)){
+                Gdx.app.log("headcollision","true");
+                position.y = platform.bottom-15;
+                finishJump();
+
             }
         }
+
 
         if(Gdx.input.isKeyPressed(Input.Keys.SPACE)){
             switch (jumpState) {
@@ -162,7 +171,7 @@ public class Player {
         }
     }
 
-    //I THINK THIS IS BAD CODE, ONLY WORKS FOR SPIKES, IT IS BROKEN
+    //I THINK THIS IS BAD CODE, ONLY WORKS FOR SPIKES
     boolean checkHazardCollision(Hazard hazard){
         if((position.x + 11 >=hazard.left && position.x <= hazard.right)&&
                 ((position.y+1 >= hazard.bottom && position.y +1 <= hazard.top)||
@@ -215,13 +224,30 @@ public class Player {
     }
 
     boolean checkSolidPlatformHeadCollision(SolidPlatform platform){
-        if((position.x + Constants.PLAYER_FEET_LENGTH -7 < platform.right) &&
-                (position.x + Constants.PLAYER_FEET_LENGTH >platform.left) &&
-                (position.y + Constants.PLAYER_FACE_HEIGHT +6> platform.bottom ) &&
-                (position.y + Constants.PLAYER_FACE_HEIGHT +3< platform.bottom )
-        ) {
-            return true;
-        } else{
+
+        //Left side of player head at co-ordinates (position.x, position.y + region.getRegionHeight())
+        //Right side of player head at co-ordinates (position.x + region.getRegionWidth(), position.y + region.getRegionHeight())
+        //First check horizontal alignment then vertical
+
+        Gdx.app.log("position.x + 12",String.valueOf(position.x + 12));
+        Gdx.app.log("position.x",String.valueOf(position.x));
+        Gdx.app.log("platform left",String.valueOf(platform.left));
+        Gdx.app.log("platform.right",String.valueOf(platform.right));
+        Gdx.app.log("platform.bottom",String.valueOf(platform.bottom));
+
+        //Horizontal alignment
+        if(position.x+12 > platform.left && position.x<platform.right) {
+
+            if(position.y+15 > platform.bottom && position.y + 15 < platform.top) {
+
+                return true;
+            } else {
+            return false;
+        }
+
+        }
+        else {
+            Gdx.app.log("headcollision","false");
             return false;
         }
     }
@@ -250,7 +276,9 @@ public class Player {
         }
 
         DrawingUtil.drawTextureRegion(sb, region, position.x,position.y);
-//        DrawingUtil.drawTextureRegion(sb,Assets.instance.escapeAssets.pixel, position.x,position.y);
+//        Gdx.app.log("player left side of head",String.valueOf(position.y + region.getRegionHeight()));
+//        Gdx.app.log("region width",String.valueOf(region.getRegionWidth()));
+        DrawingUtil.drawTextureRegion(sb,Assets.instance.escapeAssets.pixel, position.x + region.getRegionWidth(),position.y + region.getRegionHeight());
     }
 
     enum PlayerFacing {
