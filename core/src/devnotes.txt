@@ -1,13 +1,18 @@
 Level Components so far:
 SolidPlatform
 HollowPlatform
+Spikes
+
 
 To implement:
 MovingPlatform (or implement optional movement to other platforms)
-Platform that breaks after being stepped on
+Crumbling platform
+More hazards:
 Fire
-Exit door
 Arrows
+Spikes
+
+Logic for exit door
 
 
 Level menu and level design

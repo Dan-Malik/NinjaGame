@@ -19,14 +19,23 @@
     },
     {
       "type": "solid",
+      "left": -240,
+      "top": 270,
+      "width": 1000,
+      "height": 80,
+      "moving": false
+    },
+    {
+      "type": "solid",
       "left": 720,
       "top": 300,
-      "width": 700,
+      "width": 1000,
       "height": 400,
       "moving": false
-    }
+    },
 
-    ,
+
+
     {
       "type": "solid",
       "left": 40,
@@ -98,7 +107,7 @@
     50
   ],
   "door": [
-    700,
+    675,
     0
   ]
 }

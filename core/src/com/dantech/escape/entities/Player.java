@@ -109,6 +109,7 @@ public class Player {
             if(checkSolidPlatformHeadCollision(platform)){
                 Gdx.app.log("headcollision","true");
                 position.y = platform.bottom-15;
+                velocity.y = 0;
                 finishJump();
 
             }
