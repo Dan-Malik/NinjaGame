@@ -18,7 +18,7 @@ public class LevelGenerator {
     public static Level generate(int levelNumber, Viewport viewport){
 
         //Accessing and parsing level json
-        String filepath = "levels/level" + levelNumber + ".json";
+        String filepath = "levels/level" + levelNumber + "experiment.json";
         Level level = new Level(viewport);
         FileHandle levelFile = Gdx.files.internal(filepath);
         JsonReader jsonReader = new JsonReader();
@@ -27,22 +27,37 @@ public class LevelGenerator {
         //Adding platforms from json platform child node
         JsonValue platformChild = baseJson.get("platforms");
         for(int i=0;i<platformChild.size;i++){
+            boolean isMoving = false;
+            if(platformChild.get(i).get("movement").get("time").asFloat() !=0){
+                isMoving = true;
+            }
+
             if(platformChild.get(i).get("type").asString().contains("solid")){
-                level.solidPlatforms.add(new SolidPlatform(
+                SolidPlatform platform = new SolidPlatform(
                         platformChild.get(i).get("left").asFloat(),
                         platformChild.get(i).get("top").asFloat(),
                         platformChild.get(i).get("width").asFloat(),
                         platformChild.get(i).get("height").asFloat(),
-                        platformChild.get(i).get("moving").asBoolean())
-                );
+                        isMoving);
+                if (isMoving){
+                    platform.setTravelTime(platformChild.get(i).get("movement").get("time").asLong());
+                    platform.setLeftBound(platformChild.get(i).get("movement").get("leftBound").asFloat());
+                    platform.setRightBound(platformChild.get(i).get("movement").get("rightBound").asFloat());
+                }
+                level.solidPlatforms.add(platform);
             } else if (platformChild.get(i).get("type").asString().contains("hollow")){
-                level.hollowPlatforms.add(new HollowPlatform(
+                HollowPlatform platform = new HollowPlatform(
                         platformChild.get(i).get("left").asFloat(),
                         platformChild.get(i).get("top").asFloat(),
                         platformChild.get(i).get("width").asFloat(),
                         platformChild.get(i).get("height").asFloat(),
-                        platformChild.get(i).get("moving").asBoolean())
-                );
+                        isMoving);
+                if (isMoving){
+                    platform.setTravelTime(platformChild.get(i).get("movement").get("time").asLong());
+                    platform.setLeftBound(platformChild.get(i).get("movement").get("leftBound").asFloat());
+                    platform.setRightBound(platformChild.get(i).get("movement").get("rightBound").asFloat());
+                }
+                level.hollowPlatforms.add(platform);
             }
         }
 

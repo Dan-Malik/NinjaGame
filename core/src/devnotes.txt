@@ -5,17 +5,16 @@ Spikes
 
 
 To implement:
-MovingPlatform (or implement optional movement to other platforms)
+If player standing on moving platform, move player position.
 Crumbling platform
 More hazards:
 Fire
 Arrows
-Spikes
 
 Logic for exit door
 
-
 Level menu and level design
+
 Background needs changing/making different ones for each level
 Intro screen
 Level select screen and save level data on phone
