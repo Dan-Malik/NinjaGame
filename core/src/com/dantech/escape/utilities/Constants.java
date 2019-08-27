@@ -9,6 +9,7 @@ public class Constants {
     public static final Color BACKGROUND_COLOR = Color.LIGHT_GRAY;
     public static final float WORLD_SIZE = 256;
     public static final float MAP_LEFT_LIMIT = 0;
+    public static final float MAP_RIGHT_LIMIT = 590;
 
     //SPRITE STUFF
 
@@ -56,7 +57,7 @@ public class Constants {
 
     public static final float PLAYER_MOVE_SPEED = 96;
     public static final float JUMP_SPEED = 0.625f * WORLD_SIZE;
-    public static final float MAX_JUMP_TIME = 0.25f;
+    public static final float MAX_JUMP_TIME = 0.3f;
     public static final float GRAVITY = 1000;
 
 

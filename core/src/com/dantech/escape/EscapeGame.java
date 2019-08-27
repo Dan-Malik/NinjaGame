@@ -7,7 +7,7 @@ public class EscapeGame extends Game {
 
 	@Override
 	public void create() {
-		setScreen(new PlayScreen());
+		setScreen(new MenuScreen());
 	}
 
 }
