@@ -41,7 +41,6 @@ public class Player {
     }
 
     public void init() {
-        Gdx.app.log("init","initializing");
         position.set(spawnLocation);
         previousFramePosition.set(spawnLocation);
         facing = PlayerFacing.RIGHT;
@@ -57,7 +56,6 @@ public class Player {
         position.mulAdd(velocity, delta);
 
         if (position.y < -250) {
-            Gdx.app.log("fell","fell");
             init();
         }
 
@@ -71,7 +69,6 @@ public class Player {
 
         for (Hazard hazard : hazards) {
             if (checkHazardCollision(hazard)) {
-                Gdx.app.log("hazard","collided");
                 init();
             }
         }
@@ -108,7 +105,7 @@ public class Player {
                 jumpState = JumpState.GROUND;
                 position.y = platform.top;
                 if(platform.moving){
-                    //moving platform logic
+                    position.x += platform.getDistanceFromPrevRender();
                 }
 
             }

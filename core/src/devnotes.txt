@@ -5,8 +5,7 @@ Spikes
 
 
 To implement:
-If player standing on moving platform, move player position.
-Crumbling platform
+Crumbling platform (for hollowPlatform)
 More hazards:
 Fire
 Arrows

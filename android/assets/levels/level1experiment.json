@@ -45,15 +45,7 @@
       "movement": {"time": 3000, "leftBound":0 ,"rightBound":100 }
     }
   ],
-  "hazards": [    {
-    "type": "spike",
-    "x": 40,
-    "y": 0
-  },{
-    "type": "spike",
-    "x": 44,
-    "y": 0
-  },{
+  "hazards": [{
     "type": "spike",
     "x": 48,
     "y": 0
@@ -100,6 +92,18 @@
   },{
     "type": "spike",
     "x": 92,
+    "y": 0
+  },{
+    "type": "spike",
+    "x": 96,
+    "y": 0
+  },{
+    "type": "spike",
+    "x": 100,
+    "y": 0
+  },{
+    "type": "spike",
+    "x": 104,
     "y": 0
   }
   ],

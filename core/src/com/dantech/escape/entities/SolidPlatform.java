@@ -11,6 +11,8 @@ public class SolidPlatform extends Platform {
     float width;
     float height;
     float initialLeft;
+    float xDisplacement = 0;
+    float distanceFromPrevRender;
 
     public SolidPlatform(float left, float top, float width, float height, boolean moving) {
         super(left, top, width, height, moving);
@@ -27,19 +29,22 @@ public class SolidPlatform extends Platform {
         Assets.instance.platformAssets.platformNinePatch1.draw(sb, left - 1, bottom - 1, width + 2, height + 2);
     }
 
+
+    public float getDistanceFromPrevRender() {
+        return distanceFromPrevRender;
+    }
+
+
     private void updatePlatformPosition() {
         this.traversalDistance = leftBound - rightBound;
         long travelTimePassed = (TimeUtils.nanosToMillis(TimeUtils.nanoTime()) - creationTime)% travelTime;
-        float xDisplacement;
-
+        distanceFromPrevRender = xDisplacement;
         if(travelTimePassed < travelTime/2){
             xDisplacement = (float)(-(traversalDistance * (2*(double)travelTimePassed /travelTime)));
-            Gdx.app.log("pos",String.valueOf(xDisplacement));
         } else {
             xDisplacement = (float)-(2*traversalDistance - (traversalDistance * (2*(double)travelTimePassed /travelTime)));;
-            Gdx.app.log("neg",String.valueOf(xDisplacement));
         }
-
+        distanceFromPrevRender = -(distanceFromPrevRender-xDisplacement);
         this.left = initialLeft + xDisplacement;
         this.right = initialLeft + this.width + xDisplacement;
     }
