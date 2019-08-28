@@ -23,7 +23,7 @@ public class Fire extends Hazard {
 
     public void update(float delta){
         float loopCurrentTime = MathUtils.nanoToSec * (TimeUtils.nanoTime() - loopStartTime);
-        region = (TextureRegion) Assets.instance.hazardAssets.burningFlame.getKeyFrame(loopCurrentTime);
+        this.region = (TextureRegion) Assets.instance.hazardAssets.burningFlame.getKeyFrame(loopCurrentTime);
 
     }
 

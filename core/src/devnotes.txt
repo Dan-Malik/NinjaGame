@@ -9,6 +9,8 @@ Crumbling platform (for hollowPlatform)
 More hazards:
 Fire
 Arrows
+Lock and Key?
+
 
 Logic for exit door
 
