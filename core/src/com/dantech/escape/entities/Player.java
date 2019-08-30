@@ -1,5 +1,6 @@
 package com.dantech.escape.entities;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -9,6 +10,8 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.TimeUtils;
+import com.dantech.escape.LevelScreen;
+import com.dantech.escape.PreferenceManager;
 import com.dantech.escape.utilities.Assets;
 import com.dantech.escape.utilities.Constants;
 import com.dantech.escape.utilities.DrawingUtil;
@@ -50,7 +53,7 @@ public class Player {
         headCollision = false;
     }
 
-    public void update(float delta, Array<HollowPlatform> hollowPlatforms, Array<SolidPlatform> solidPlatforms, Array<Hazard> hazards) {
+    public void update(float delta,int levelNumber, Array<HollowPlatform> hollowPlatforms, Array<SolidPlatform> solidPlatforms, Array<Hazard> hazards, Door door) {
         previousFramePosition.set(position);
         velocity.y -= Constants.GRAVITY * delta;
         position.mulAdd(velocity, delta);
@@ -71,6 +74,13 @@ public class Player {
             if (checkHazardCollision(hazard)) {
                 init();
             }
+        }
+
+        if(checkDoorCollision(door)){
+            if(PreferenceManager.getLevelsUnlocked()==levelNumber){
+                PreferenceManager.setLevelUnlocked(levelNumber+1);
+            }
+            ((Game) Gdx.app.getApplicationListener()).setScreen(new LevelScreen());
         }
 
 
@@ -179,6 +189,16 @@ public class Player {
         if ((position.x + 11 >= hazard.left && position.x <= hazard.right) &&
                 ((position.y + 1 >= hazard.bottom && position.y + 1 <= hazard.top) ||
                         (position.y + 14 >= hazard.bottom && position.y + 14 <= hazard.top))) {
+            return true;
+        }
+        return false;
+    }
+
+    //This may also be a trainwreck
+    boolean checkDoorCollision(Door door) {
+        if ((position.x + 11 >= door.left && position.x <= door.right) &&
+                ((position.y + 1 >= door.bottom && position.y + 1 <= door.top) ||
+                        (position.y + 14 >= door.bottom && position.y + 14 <= door.top))) {
             return true;
         }
         return false;

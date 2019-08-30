@@ -44,25 +44,23 @@ public class LevelScreen extends ScreenAdapter {
         for (int i = 1; i <= numberOfRows; i++) {
             //Each cell of the row
             for (int j = 1; j <= 8; j++) {
-                String cellValue = String.valueOf((i - 1) * 8 + j);
+                final int levelNumber = (i - 1) * 8 + j;
+                if(levelNumber<=PreferenceManager.getLevelsUnlocked()){
+                String cellValue = String.valueOf(levelNumber);
                 TextButton button = new TextButton(cellValue, skin, "default");
-
-                //Check if level not unlocked
-                if (true) {
-                    button.setDisabled(true);
-                }
                 button.setHeight(buttonHeight);
                 button.setWidth(buttonWidth);
                 button.setPosition(leftMargin + (j - 1) * (buttonWidth + buttonGap), screenHeight - (i * (2 * buttonGap) + buttonHeight));
-//                button.addListener(new ClickListener() {
-//                    @Override
-//                    public void clicked(InputEvent event, float x, float y) {
-//                        ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen());
-//
-//                    }
-//                });
+                button.addListener(new ClickListener() {
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen(levelNumber));
+
+                    }
+                });
 
                 stage.addActor(button);
+            }
             }
         }
     }
@@ -79,7 +77,7 @@ public class LevelScreen extends ScreenAdapter {
 
         ///
 
-        generateButtonRows(24);
+        generateButtonRows(PreferenceManager.getLevelsUnlocked());
 
         /// BUTTON TEXT TOO SMALL, ESPECIALLY ON PHONE
 
@@ -92,7 +90,7 @@ public class LevelScreen extends ScreenAdapter {
 //        });
 
 
-        generateButtonRows(24);
+        generateButtonRows(PreferenceManager.getLevelsUnlocked());
 
         Gdx.input.setInputProcessor(stage);
 
@@ -126,7 +124,7 @@ public class LevelScreen extends ScreenAdapter {
 
         sb.end();
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
-            ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen());
+            ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen(1));
         }
     }
 

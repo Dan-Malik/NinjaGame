@@ -18,6 +18,7 @@ import com.dantech.escape.entities.Spike;
 public class Level {
 
     Viewport viewport;
+    public int levelNumber;
     public Player player;
     public Array<HollowPlatform> hollowPlatforms;
     public Array<SolidPlatform> solidPlatforms;
@@ -29,7 +30,6 @@ public class Level {
         hollowPlatforms = new Array<HollowPlatform>();
         solidPlatforms = new Array<SolidPlatform>();
         hazards = new Array<Hazard>();
-//        initTestLevel();
 
     }
 
@@ -40,7 +40,7 @@ public class Level {
                 hazard.update(delta);
             }
         }
-        player.update(delta, hollowPlatforms, solidPlatforms, hazards);
+        player.update(delta,levelNumber, hollowPlatforms, solidPlatforms, hazards, door);
     }
 
     public void render(SpriteBatch sb){
