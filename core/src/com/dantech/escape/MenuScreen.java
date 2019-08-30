@@ -62,7 +62,7 @@ public class MenuScreen extends ScreenAdapter {
         playButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y){
-                ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen());
+                ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen(1));
 
             }
         });
@@ -115,7 +115,7 @@ public class MenuScreen extends ScreenAdapter {
 
         sb.end();
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
-            ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen());
+            ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen(1));
         }
     }
 

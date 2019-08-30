@@ -73,6 +73,9 @@ public class LevelGenerator {
             }
         }
 
+        //Level number
+        level.levelNumber =levelNumber;
+
         //Door
         level.door = new Door(new Vector2(baseJson.get("door").get(0).asFloat(),baseJson.get("door").get(1).asFloat()));
 

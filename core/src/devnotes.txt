@@ -16,31 +16,19 @@ Logic for exit door
 
 
 ///
-LEVEL SYSTEM
+SAVING SYSTEM
 
-LevelScreen displays the buttons for the levels - as well as the style for the button needing
-proper configuration, the system for unlocking levels needs to be set.
+PreferenceManager currently initialises with 1 level unlocked and music and sound on.
+Need to set Player object so on collision with door, preferencemanager updates the levels unlocked,
+and you get returned to the level screen.
 
-Game state needs to be saved to a json. Game state will include what levels are unlocked and settings
-for sound and music (booleans)
-
-LevelScreen should scan this Json and unlock/show buttons based on how many are unlocked.
-
-On starting the game the JSON should be scanned for. If it doesn't exist a default JSON is created with
-level 1 unlocked and sound and music on.
-
-///
-
-///
-
-Background music
-Sound effects for death
+Additionally implement checks for music settings at each screen, and play music appropriately.
+Sound Effects are only relevant for the PlayScreen.
 
 ///
 
 Background needs changing/making different ones for each level
 Intro screen
-Level select screen and save level data on phone
 Options menu
 Pause game
 Timed levels?

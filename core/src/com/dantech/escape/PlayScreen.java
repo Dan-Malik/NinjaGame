@@ -14,6 +14,7 @@ import com.dantech.escape.utilities.LevelGenerator;
 class PlayScreen extends ScreenAdapter {
 
     public static final String TAG = PlayScreen.class.getName();
+    private int levelNumber;
 
     Level level;
     SpriteBatch sb;
@@ -21,12 +22,16 @@ class PlayScreen extends ScreenAdapter {
 
     private FollowCam followCam;
 
+    public PlayScreen(int levelNumber){
+        this.levelNumber = levelNumber;
+    }
+
     @Override
     public void show(){
 
         Assets.instance.init();
         sb = new SpriteBatch();
-        level  = LevelGenerator.generate(1,viewport);
+        level  = LevelGenerator.generate(levelNumber,viewport);
         viewport = new ExtendViewport(Constants.WORLD_SIZE, Constants.WORLD_SIZE);
         followCam = new FollowCam(viewport.getCamera(), level.player);
     }

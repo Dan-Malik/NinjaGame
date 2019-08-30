@@ -11,19 +11,16 @@ public class Constants {
     public static final float MAP_LEFT_LIMIT = 0;
     public static final float MAP_RIGHT_LIMIT = 590;
 
+    public static final String PREFERENCES_FILE = "ninja-game-settings";
+
     //SPRITE STUFF
 
     public static final String TEXTURE_ATLAS = "images/escape.pack.atlas";
-
-
     public static final String MENU_BG = "menubg";
     public static final String LOGO = "logo";
     public static final String MENU_PLAY_BTN = "playbtn";
     public static final String MENU_SETTINGS_BTN = "settingsbtn";
     public static final String MENU_QUESTION_BTN = "questionbtn";
-
-
-
     public static final String STANDING_RIGHT = "standing-right";
     public static final String STANDING_LEFT = "standing-left";
     public static final String JUMPING_RIGHT = "jumping-right";
@@ -36,15 +33,17 @@ public class Constants {
     public static final String WALKING_LEFT_3 = "walk-3-left";
     public static final String PLATFORM_SPRITE_1 = "platform";
     public static final String PLATFORM_SPRITE_2 = "platform2";
+
     public static final String SPIKE = "spike";
     public static final String DOOR ="door" ;
-
     public static final String FIRE_1 = "fire1";
     public static final String FIRE_2 = "fire2";
     public static final String FIRE_3 = "fire3";
     public static final String FIRE_4 = "fire4";
     public static final String FIRE_5 = "fire5";
     public static final String FIRE_6 = "fire6";
+
+
     public static final float FIRE_LOOP_TIME = 0.06f;
 
 
