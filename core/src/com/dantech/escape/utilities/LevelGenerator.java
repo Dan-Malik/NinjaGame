@@ -18,7 +18,7 @@ public class LevelGenerator {
     public static Level generate(int levelNumber, Viewport viewport){
 
         //Accessing and parsing level json
-        String filepath = "levels/level" + levelNumber + "experiment.json";
+        String filepath = "levels/level" + levelNumber + ".json";
         Level level = new Level(viewport);
         FileHandle levelFile = Gdx.files.internal(filepath);
         JsonReader jsonReader = new JsonReader();
