@@ -40,14 +40,26 @@ public class Level {
                 hazard.update(delta);
             }
         }
+
+        for (SolidPlatform platform:solidPlatforms){
+            if(platform.moving==true){
+                platform.update(delta);
+            }
+        }
+
         player.update(delta,levelNumber, hollowPlatforms, solidPlatforms, hazards, door);
     }
 
     public void render(SpriteBatch sb){
         sb.begin();
+
+
         for(Platform platform: hollowPlatforms){
             platform.render(sb);
         }
+
+        player.render(sb);
+
         for(Platform platform: solidPlatforms){
             platform.render(sb);
         }
@@ -57,7 +69,6 @@ public class Level {
 
         door.render(sb);
 
-        player.render(sb);
         sb.end();
     }
 

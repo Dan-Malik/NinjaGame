@@ -18,7 +18,7 @@ public class Platform {
     float traversalDistance;
     float width;
     float height;
-    boolean moving;
+    public boolean moving;
 
 
     public Platform(float left, float top, float width, float height, boolean moving) {

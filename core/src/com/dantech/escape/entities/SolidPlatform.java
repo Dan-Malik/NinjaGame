@@ -19,13 +19,15 @@ public class SolidPlatform extends Platform {
         this.initialLeft = this.left;
     }
 
-    public void render(SpriteBatch sb) {
-        width = right - left;
-        height = top - bottom;
-
-        if(moving) {
+    public void update(float delta){
+        this.width = right - left;
+        this.height = top - bottom;
             updatePlatformPosition();
-        }
+    }
+
+    public void render(SpriteBatch sb) {
+        this.width = right - left;
+        this.height = top - bottom;
         Assets.instance.platformAssets.platformNinePatch1.draw(sb, left - 1, bottom - 1, width + 2, height + 2);
     }
 
@@ -38,13 +40,15 @@ public class SolidPlatform extends Platform {
     private void updatePlatformPosition() {
         this.traversalDistance = leftBound - rightBound;
         long travelTimePassed = (TimeUtils.nanosToMillis(TimeUtils.nanoTime()) - creationTime)% travelTime;
-        distanceFromPrevRender = xDisplacement;
+        distanceFromPrevRender = xDisplacement;  //Initially 0
         if(travelTimePassed < travelTime/2){
             xDisplacement = (float)(-(traversalDistance * (2*(double)travelTimePassed /travelTime)));
+            distanceFromPrevRender = Math.abs(distanceFromPrevRender-xDisplacement);
         } else {
             xDisplacement = (float)-(2*traversalDistance - (traversalDistance * (2*(double)travelTimePassed /travelTime)));;
+            distanceFromPrevRender = -Math.abs(distanceFromPrevRender-xDisplacement);
         }
-        distanceFromPrevRender = -(distanceFromPrevRender-xDisplacement);
+        Gdx.app.log("distance from previous",String.valueOf(distanceFromPrevRender));
         this.left = initialLeft + xDisplacement;
         this.right = initialLeft + this.width + xDisplacement;
     }

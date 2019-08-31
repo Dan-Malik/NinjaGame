@@ -184,7 +184,6 @@ public class Player {
         }
     }
 
-    //I THINK THIS IS BAD CODE, ONLY WORKS FOR SPIKES
     boolean checkHazardCollision(Hazard hazard) {
         if ((position.x + 11 >= hazard.left && position.x <= hazard.right) &&
                 ((position.y + 1 >= hazard.bottom && position.y + 1 <= hazard.top) ||
@@ -194,7 +193,6 @@ public class Player {
         return false;
     }
 
-    //This may also be a trainwreck
     boolean checkDoorCollision(Door door) {
         if ((position.x + 11 >= door.left && position.x <= door.right) &&
                 ((position.y + 1 >= door.bottom && position.y + 1 <= door.top) ||
