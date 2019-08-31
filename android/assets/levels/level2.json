@@ -31,7 +31,7 @@
       "top": 300,
       "width": 1000,
       "height": 400,
-      "moving": false
+      "movement": {"time": 0}
     },
 
 
