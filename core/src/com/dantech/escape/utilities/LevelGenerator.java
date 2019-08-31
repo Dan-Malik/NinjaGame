@@ -8,6 +8,7 @@ import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.dantech.escape.Level;
 import com.dantech.escape.entities.Door;
+import com.dantech.escape.entities.Gear;
 import com.dantech.escape.entities.HollowPlatform;
 import com.dantech.escape.entities.Player;
 import com.dantech.escape.entities.SolidPlatform;
@@ -68,6 +69,12 @@ public class LevelGenerator {
                 level.hazards.add(new Spike(new Vector2(
                         hazardsChild.get(i).get("x").asFloat(),
                         hazardsChild.get(i).get("y").asFloat()
+                        ))
+                );
+            } else if(hazardsChild.get(i).get("type").asString().contains("gear")){
+                level.hazards.add(new Gear(new Vector2(
+                                hazardsChild.get(i).get("x").asFloat(),
+                                hazardsChild.get(i).get("y").asFloat()
                         ))
                 );
             }

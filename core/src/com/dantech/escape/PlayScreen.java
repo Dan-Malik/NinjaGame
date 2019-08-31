@@ -62,7 +62,6 @@ class PlayScreen extends ScreenAdapter {
 
         sb.setProjectionMatrix(viewport.getCamera().combined);
         level.render(sb);
-
     }
 
 }

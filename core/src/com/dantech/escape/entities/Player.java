@@ -31,6 +31,7 @@ public class Player {
     WalkState walkState;
     WallCollisionState collisionState;
     boolean headCollision;
+    TextureRegion region = Assets.instance.escapeAssets.standingRight;
 
     long jumpStartTime;
     long walkStartTime;
@@ -71,8 +72,14 @@ public class Player {
         }
 
         for (Hazard hazard : hazards) {
-            if (checkHazardCollision(hazard)) {
-                init();
+            if(!(hazard instanceof Gear)) {
+                if (checkHazardCollision(hazard)) {
+                    init();
+                }
+            } else {
+                if (checkCircleHazardCollision((Gear)hazard)){
+                    init();
+                }
             }
         }
 
@@ -139,6 +146,16 @@ public class Player {
         } else {
             finishJump();
         }
+    }
+
+    private boolean checkCircleHazardCollision(Gear gear) {
+        float xDifference = gear.centre.x - Math.max(position.x,Math.min(gear.centre.x, position.x+region.getRegionWidth()));
+        float yDifference = gear.centre.y - Math.max(position.y,Math.min(gear.centre.y, position.y+region.getRegionHeight()));
+        Gdx.app.log("xDifference",String.valueOf(xDifference));
+        Gdx.app.log("yDifference",String.valueOf(yDifference));
+
+        return (xDifference*xDifference + yDifference*yDifference)< (gear.radius*gear.radius);
+
     }
 
     private void moveLeft(float delta) {
@@ -260,7 +277,6 @@ public class Player {
     }
 
     public void render(SpriteBatch sb) {
-        TextureRegion region = Assets.instance.escapeAssets.standingRight;
 
         if (facing == PlayerFacing.LEFT) {
             if (jumpState != JumpState.GROUND) {
@@ -285,7 +301,7 @@ public class Player {
         DrawingUtil.drawTextureRegion(sb, region, position.x, position.y);
 //        Gdx.app.log("player left side of head",String.valueOf(position.y + region.getRegionHeight()));
 //        Gdx.app.log("region width",String.valueOf(region.getRegionWidth()));
-        DrawingUtil.drawTextureRegion(sb, Assets.instance.escapeAssets.pixel, position.x + region.getRegionWidth(), position.y + region.getRegionHeight());
+//        DrawingUtil.drawTextureRegion(sb, Assets.instance.escapeAssets.pixel, position.x + region.getRegionWidth(), position.y + region.getRegionHeight());
     }
 
     enum PlayerFacing {

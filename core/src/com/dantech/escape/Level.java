@@ -2,11 +2,14 @@ package com.dantech.escape;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.dantech.escape.entities.Door;
 import com.dantech.escape.entities.Fire;
+import com.dantech.escape.entities.Gear;
 import com.dantech.escape.entities.HollowPlatform;
 import com.dantech.escape.entities.Platform;
 import com.dantech.escape.entities.Player;
@@ -30,13 +33,12 @@ public class Level {
         hollowPlatforms = new Array<HollowPlatform>();
         solidPlatforms = new Array<SolidPlatform>();
         hazards = new Array<Hazard>();
-
     }
 
     public void update(float delta){
 
         for (Hazard hazard: hazards){
-            if(hazard.animated == true){
+            if (hazard.animated == true){
                 hazard.update(delta);
             }
         }
@@ -58,8 +60,6 @@ public class Level {
             platform.render(sb);
         }
 
-        player.render(sb);
-
         for(Platform platform: solidPlatforms){
             platform.render(sb);
         }
@@ -69,7 +69,10 @@ public class Level {
 
         door.render(sb);
 
+        player.render(sb);
+
         sb.end();
+
     }
 
     void initTestLevel(){

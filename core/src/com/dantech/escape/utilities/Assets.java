@@ -109,7 +109,7 @@ public class Assets implements Disposable, AssetErrorListener {
         public final AtlasRegion fire1;
         public final AtlasRegion fire2;
         public final AtlasRegion spike;
-
+        public final AtlasRegion gear;
 
 
         public HazardAssets(TextureAtlas atlas){
@@ -117,6 +117,7 @@ public class Assets implements Disposable, AssetErrorListener {
             fire1 = atlas.findRegion(Constants.FIRE_1);
             fire2 = atlas.findRegion(Constants.FIRE_2);
             spike = atlas.findRegion(Constants.SPIKE);
+            gear = atlas.findRegion(Constants.GEAR);
 
 
             Array<AtlasRegion> burningFlameSprites = new Array<AtlasRegion>();

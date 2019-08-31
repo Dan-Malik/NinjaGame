@@ -42,6 +42,7 @@ public class Constants {
     public static final String FIRE_4 = "fire4";
     public static final String FIRE_5 = "fire5";
     public static final String FIRE_6 = "fire6";
+    public static final String GEAR = "gear";
 
 
     public static final float FIRE_LOOP_TIME = 0.06f;

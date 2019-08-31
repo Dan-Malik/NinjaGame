@@ -28,11 +28,10 @@ public class Hazard {
         this.top = position.y + region.getRegionHeight()-1;
     }
 
-    public void update(float delta){
-
-    }
-
     public void render(SpriteBatch sb){
         DrawingUtil.drawTextureRegion(sb,region,position.x, position.y);
+    }
+
+    public void update(float delta) {
     }
 }

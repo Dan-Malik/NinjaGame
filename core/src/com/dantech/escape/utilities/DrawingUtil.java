@@ -25,18 +25,19 @@ public class DrawingUtil {
                 false);
     }
 
-    public static void drawTextureRegion(SpriteBatch sb, TextureRegion region, float x, float y, float scaleFactor) {
+    //Strictly for gear
+    public static void drawTextureRegion(SpriteBatch sb, TextureRegion region, float x, float y, float scaleFactor, float rotation) {
         sb.draw(
                 region.getTexture(),
                 x,
                 y,
-                0,
-                0,
+                (region.getRegionWidth()*scaleFactor)/2,
+                (region.getRegionHeight()*scaleFactor)/2,
                 region.getRegionWidth()*scaleFactor,
                 region.getRegionHeight()*scaleFactor,
                 1,
                 1,
-                0,
+                rotation,
                 region.getRegionX(),
                 region.getRegionY(),
                 region.getRegionWidth(),
