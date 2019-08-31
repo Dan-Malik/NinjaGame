@@ -1,3 +1,13 @@
+//////
+
+!! GAME STOPPED WORKING ON ANDROID AFTER SAVE GAME WAS IMPLEMENTED, THIS NEEDS TO BE FIXED AS A PRIORITY
+
+Possible solutions involve tweaking LibGdx preferences to get them to work with Android, alternatively could switch back
+to using JSONs as previously planned.
+
+
+//////
+
 Level Components so far:
 SolidPlatform
 HollowPlatform
@@ -26,6 +36,9 @@ Additionally implement checks for music settings at each screen, and play music 
 Sound Effects are only relevant for the PlayScreen.
 
 ///
+
+
+
 
 Background needs changing/making different ones for each level
 Intro screen
