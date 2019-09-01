@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.dantech.escape.entities.Decoration;
 import com.dantech.escape.entities.Door;
 import com.dantech.escape.entities.Fire;
 import com.dantech.escape.entities.Gear;
@@ -26,6 +27,7 @@ public class Level {
     public Array<HollowPlatform> hollowPlatforms;
     public Array<SolidPlatform> solidPlatforms;
     public Array<Hazard> hazards;
+    public Array<Decoration> deco;
     public Door door;
 
     public Level(Viewport viewport){
@@ -33,6 +35,7 @@ public class Level {
         hollowPlatforms = new Array<HollowPlatform>();
         solidPlatforms = new Array<SolidPlatform>();
         hazards = new Array<Hazard>();
+        deco = new Array<Decoration>();
     }
 
     public void update(float delta){
@@ -55,6 +58,9 @@ public class Level {
     public void render(SpriteBatch sb){
         sb.begin();
 
+        for(Decoration decoration : deco){
+            decoration.render(sb);
+        }
 
         for(Platform platform: hollowPlatforms){
             platform.render(sb);

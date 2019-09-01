@@ -11,9 +11,44 @@ arrow
   orig: 25, 5
   offset: 0, 0
   index: -1
+bgbrick
+  rotate: false
+  xy: 248, 117
+  size: 4, 2
+  orig: 4, 2
+  offset: 0, 0
+  index: -1
+bgbricks1
+  rotate: false
+  xy: 248, 121
+  size: 6, 5
+  orig: 6, 5
+  offset: 0, 0
+  index: -1
+bgbricks2
+  rotate: false
+  xy: 83, 62
+  size: 9, 5
+  orig: 9, 5
+  offset: 0, 0
+  index: -1
+bgbricks3
+  rotate: false
+  xy: 105, 62
+  size: 9, 8
+  orig: 9, 8
+  offset: 0, 0
+  index: -1
+bgbricks4
+  rotate: false
+  xy: 94, 62
+  size: 9, 5
+  orig: 9, 5
+  offset: 0, 0
+  index: -1
 door
   rotate: false
-  xy: 184, 71
+  xy: 200, 71
   size: 12, 16
   orig: 12, 16
   offset: 0, 0
@@ -55,21 +90,21 @@ fire5
   index: -1
 fire6
   rotate: false
-  xy: 226, 74
+  xy: 232, 89
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 fire7
   rotate: false
-  xy: 246, 100
+  xy: 246, 95
   size: 8, 9
   orig: 8, 9
   offset: 0, 0
   index: -1
 fire8
   rotate: false
-  xy: 246, 89
+  xy: 246, 84
   size: 8, 9
   orig: 8, 9
   offset: 0, 0
@@ -90,14 +125,14 @@ jumping-left
   index: -1
 jumping-right
   rotate: false
-  xy: 234, 111
+  xy: 184, 72
   size: 14, 15
   orig: 14, 15
   offset: 0, 0
   index: -1
 pixel
   rotate: false
-  xy: 234, 108
+  xy: 242, 86
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
@@ -125,57 +160,64 @@ spike
   index: -1
 standing-left
   rotate: false
-  xy: 198, 71
+  xy: 214, 71
   size: 12, 16
   orig: 12, 16
   offset: 0, 0
   index: -1
 standing-right
   rotate: false
-  xy: 212, 71
+  xy: 228, 71
   size: 12, 16
   orig: 12, 16
   offset: 0, 0
   index: -1
 walk-1-left
   rotate: false
-  xy: 232, 91
+  xy: 242, 67
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-1-right
   rotate: false
-  xy: 240, 72
+  xy: 122, 59
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-2-left
   rotate: false
-  xy: 226, 57
+  xy: 136, 59
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-2-right
   rotate: false
-  xy: 240, 55
+  xy: 122, 42
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-3-left
   rotate: false
-  xy: 122, 59
+  xy: 150, 59
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-3-right
   rotate: false
-  xy: 136, 59
+  xy: 122, 25
   size: 12, 15
   orig: 12, 15
+  offset: 0, 0
+  index: -1
+window1
+  rotate: false
+  xy: 234, 106
+  size: 12, 20
+  orig: 12, 20
   offset: 0, 0
   index: -1

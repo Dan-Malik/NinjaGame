@@ -6,7 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Constants {
 
-    public static final Color BACKGROUND_COLOR = Color.LIGHT_GRAY;
+    public static final Color BACKGROUND_COLOR = new Color(0.3411f,0.2392f,0.3098f,1);
     public static final float WORLD_SIZE = 256;
     public static final float MAP_LEFT_LIMIT = 0;
     public static final float MAP_RIGHT_LIMIT = 590;
@@ -44,6 +44,13 @@ public class Constants {
     public static final String FIRE_6 = "fire6";
     public static final String GEAR = "gear";
 
+    public static final String WINDOW = "window1";
+    public static final String BRICK = "bgbrick";
+    public static final String BRICKS1 = "bgbricks1";
+    public static final String BRICKS2 = "bgbricks2";
+    public static final String BRICKS3 = "bgbricks3";
+    public static final String BRICKS4 = "bgbricks4";
+
 
     public static final float FIRE_LOOP_TIME = 0.06f;
 
@@ -59,6 +66,5 @@ public class Constants {
     public static final float JUMP_SPEED = 0.625f * WORLD_SIZE;
     public static final float MAX_JUMP_TIME = 0.3f;
     public static final float GRAVITY = 1000;
-
 
 }

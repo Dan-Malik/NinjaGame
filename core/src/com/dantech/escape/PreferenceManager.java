@@ -2,10 +2,12 @@ package com.dantech.escape;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
+import com.badlogic.gdx.utils.JsonWriter;
 import com.dantech.escape.utilities.Constants;
 
 public class PreferenceManager {
     static Preferences prefs = Gdx.app.getPreferences(Constants.PREFERENCES_FILE);
+
 
     static public void showAllPrefs(){
         Gdx.app.log("Sound", String.valueOf(prefs.getBoolean("SoundEffects")));
