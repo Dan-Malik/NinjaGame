@@ -1,181 +1,230 @@
 
 escape.pack.png
-size: 256,128
+size: 128,512
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 arrow
   rotate: false
-  xy: 68, 69
+  xy: 39, 187
   size: 25, 5
   orig: 25, 5
   offset: 0, 0
   index: -1
+bgbrick
+  rotate: false
+  xy: 99, 414
+  size: 4, 2
+  orig: 4, 2
+  offset: 0, 0
+  index: -1
+bgbricks1
+  rotate: false
+  xy: 79, 217
+  size: 6, 5
+  orig: 6, 5
+  offset: 0, 0
+  index: -1
+bgbricks2
+  rotate: false
+  xy: 38, 155
+  size: 9, 5
+  orig: 9, 5
+  offset: 0, 0
+  index: -1
+bgbricks3
+  rotate: false
+  xy: 53, 177
+  size: 9, 8
+  orig: 9, 8
+  offset: 0, 0
+  index: -1
+bgbricks4
+  rotate: false
+  xy: 66, 187
+  size: 9, 5
+  orig: 9, 5
+  offset: 0, 0
+  index: -1
+column
+  rotate: false
+  xy: 2, 162
+  size: 35, 320
+  orig: 35, 320
+  offset: 0, 0
+  index: -1
 door
   rotate: false
-  xy: 184, 71
+  xy: 79, 258
   size: 12, 16
   orig: 12, 16
   offset: 0, 0
   index: -1
 fire1
   rotate: false
-  xy: 68, 76
+  xy: 39, 246
   size: 38, 50
   orig: 38, 50
   offset: 0, 0
   index: -1
 fire2
   rotate: false
-  xy: 108, 76
+  xy: 39, 194
   size: 38, 50
   orig: 38, 50
   offset: 0, 0
   index: -1
 fire3
   rotate: false
-  xy: 148, 76
+  xy: 2, 110
   size: 34, 50
   orig: 34, 50
   offset: 0, 0
   index: -1
 fire4
   rotate: false
-  xy: 184, 89
+  xy: 2, 71
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 fire5
   rotate: false
-  xy: 216, 108
+  xy: 105, 464
   size: 16, 18
   orig: 16, 18
   offset: 0, 0
   index: -1
 fire6
   rotate: false
-  xy: 226, 74
+  xy: 18, 54
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 fire7
   rotate: false
-  xy: 246, 100
+  xy: 105, 419
   size: 8, 9
   orig: 8, 9
   offset: 0, 0
   index: -1
 fire8
   rotate: false
-  xy: 246, 89
+  xy: 16, 26
   size: 8, 9
   orig: 8, 9
   offset: 0, 0
   index: -1
 gear
   rotate: false
-  xy: 2, 62
+  xy: 39, 418
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 jumping-left
   rotate: false
-  xy: 216, 91
+  xy: 2, 54
   size: 14, 15
   orig: 14, 15
   offset: 0, 0
   index: -1
 jumping-right
   rotate: false
-  xy: 234, 111
+  xy: 105, 447
   size: 14, 15
   orig: 14, 15
   offset: 0, 0
   index: -1
 pixel
   rotate: false
-  xy: 234, 108
+  xy: 34, 107
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 platform
   rotate: false
-  xy: 2, 2
+  xy: 39, 358
   size: 58, 58
   orig: 58, 58
   offset: 0, 0
   index: -1
 platform2
   rotate: false
-  xy: 62, 2
+  xy: 39, 298
   size: 58, 58
   orig: 58, 58
   offset: 0, 0
   index: -1
 spike
   rotate: false
-  xy: 68, 62
+  xy: 39, 162
   size: 13, 5
   orig: 13, 5
   offset: 0, 0
   index: -1
 standing-left
   rotate: false
-  xy: 198, 71
+  xy: 39, 169
   size: 12, 16
   orig: 12, 16
   offset: 0, 0
   index: -1
 standing-right
   rotate: false
-  xy: 212, 71
+  xy: 2, 36
   size: 12, 16
   orig: 12, 16
   offset: 0, 0
   index: -1
 walk-1-left
   rotate: false
-  xy: 232, 91
+  xy: 105, 430
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-1-right
   rotate: false
-  xy: 240, 72
+  xy: 79, 241
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-2-left
   rotate: false
-  xy: 226, 57
+  xy: 2, 19
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-2-right
   rotate: false
-  xy: 240, 55
+  xy: 16, 37
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-3-left
   rotate: false
-  xy: 122, 59
+  xy: 79, 224
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
   index: -1
 walk-3-right
   rotate: false
-  xy: 136, 59
+  xy: 2, 2
   size: 12, 15
   orig: 12, 15
+  offset: 0, 0
+  index: -1
+window1
+  rotate: false
+  xy: 79, 276
+  size: 12, 20
+  orig: 12, 20
   offset: 0, 0
   index: -1

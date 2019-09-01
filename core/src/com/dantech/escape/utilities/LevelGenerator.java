@@ -2,11 +2,14 @@ package com.dantech.escape.utilities;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.dantech.escape.Level;
+import com.dantech.escape.entities.Decoration;
 import com.dantech.escape.entities.Door;
 import com.dantech.escape.entities.Gear;
 import com.dantech.escape.entities.HollowPlatform;
@@ -78,6 +81,59 @@ public class LevelGenerator {
                         ))
                 );
             }
+        }
+
+        //Decoration
+        try {
+            JsonValue decorationChild = baseJson.get("decoration");
+
+            //Bricks
+            for(int i=0;i<120;i++){
+                if(i%5==1){
+                    Decoration brick = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
+                    brick.setRegion(Assets.instance.decorationAssets.brick);
+                    level.deco.add(brick);
+                }else if(i%5==2){
+                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
+                    bricks.setRegion(Assets.instance.decorationAssets.bricks1);
+                    level.deco.add(bricks);
+                }else if(i%5==3){
+                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
+                    bricks.setRegion(Assets.instance.decorationAssets.bricks2);
+                    level.deco.add(bricks);
+                }else if(i%5==4){
+                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
+                    bricks.setRegion(Assets.instance.decorationAssets.bricks3);
+                    level.deco.add(bricks);
+                } else {
+                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
+                    bricks.setRegion(Assets.instance.decorationAssets.bricks4);
+                    level.deco.add(bricks);
+                }
+            }
+
+            for(int i=0;i<decorationChild.size;i++){
+
+                //Windows
+                if(decorationChild.get(i).get("type").asString().contains("window")){
+                    Decoration decoPiece = new Decoration(new Vector2(
+                            decorationChild.get(i).get("x").asFloat(),
+                            decorationChild.get(i).get("y").asFloat()));
+                    decoPiece.setRegion(Assets.instance.decorationAssets.window);
+                    level.deco.add(decoPiece);
+                }
+                if(decorationChild.get(i).get("type").asString().contains("column")){
+                    Decoration decoPiece = new Decoration(new Vector2(
+                            decorationChild.get(i).get("x").asFloat(),
+                            decorationChild.get(i).get("y").asFloat()));
+                    decoPiece.setRegion(Assets.instance.decorationAssets.column);
+                    level.deco.add(decoPiece);
+                }
+
+
+            }
+        } catch(Exception ex){
+            Gdx.app.log("No decoration","flop" );
         }
 
         //Level number

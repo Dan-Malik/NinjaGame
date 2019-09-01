@@ -299,7 +299,7 @@ public class Player {
         }
 
         DrawingUtil.drawTextureRegion(sb, region, position.x, position.y);
-//        Gdx.app.log("player left side of head",String.valueOf(position.y + region.getRegionHeight()));
+        Gdx.app.log("player left side of head",String.valueOf(position.y + region.getRegionHeight()));
 //        Gdx.app.log("region width",String.valueOf(region.getRegionWidth()));
 //        DrawingUtil.drawTextureRegion(sb, Assets.instance.escapeAssets.pixel, position.x + region.getRegionWidth(), position.y + region.getRegionHeight());
     }

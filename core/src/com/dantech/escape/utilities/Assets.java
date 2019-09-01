@@ -26,6 +26,8 @@ public class Assets implements Disposable, AssetErrorListener {
 
     public PlatformAssets platformAssets;
 
+    public DecorationAssets decorationAssets;
+
     private AssetManager assetManager;
 
     private Assets() {
@@ -41,6 +43,7 @@ public class Assets implements Disposable, AssetErrorListener {
         escapeAssets = new EscapeAssets(atlas);
         platformAssets = new PlatformAssets(atlas);
         hazardAssets = new HazardAssets(atlas);
+        decorationAssets = new DecorationAssets(atlas);
     }
 
     @Override
@@ -101,6 +104,26 @@ public class Assets implements Disposable, AssetErrorListener {
             walkingRightAnimation = new Animation(Constants.WALK_LOOP_TIME, walkingRightSprites, Animation.PlayMode.LOOP);
 
 
+        }
+    }
+
+    public class DecorationAssets{
+        public final AtlasRegion window;
+        public final AtlasRegion brick;
+        public final AtlasRegion bricks1;
+        public final AtlasRegion bricks2;
+        public final AtlasRegion bricks3;
+        public final AtlasRegion bricks4;
+        public final AtlasRegion column;
+
+        public DecorationAssets(TextureAtlas atlas){
+            window = atlas.findRegion(Constants.WINDOW);
+            brick = atlas.findRegion(Constants.BRICK);
+            bricks1 = atlas.findRegion(Constants.BRICKS1);
+            bricks2 = atlas.findRegion(Constants.BRICKS2);
+            bricks3 = atlas.findRegion(Constants.BRICKS3);
+            bricks4 = atlas.findRegion(Constants.BRICKS4);
+            column = atlas.findRegion(Constants.COLUMN);
         }
     }
 
