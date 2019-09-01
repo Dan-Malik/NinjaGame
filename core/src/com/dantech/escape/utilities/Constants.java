@@ -11,8 +11,6 @@ public class Constants {
     public static final float MAP_LEFT_LIMIT = 0;
     public static final float MAP_RIGHT_LIMIT = 590;
 
-    public static final String PREFERENCES_FILE = "ninja-game-settings";
-
     //SPRITE STUFF
 
     public static final String TEXTURE_ATLAS = "images/escape.pack.atlas";
@@ -50,6 +48,7 @@ public class Constants {
     public static final String BRICKS2 = "bgbricks2";
     public static final String BRICKS3 = "bgbricks3";
     public static final String BRICKS4 = "bgbricks4";
+    public static final String COLUMN = "column";
 
 
     public static final float FIRE_LOOP_TIME = 0.06f;

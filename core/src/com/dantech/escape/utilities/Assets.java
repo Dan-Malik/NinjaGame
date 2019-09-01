@@ -114,6 +114,7 @@ public class Assets implements Disposable, AssetErrorListener {
         public final AtlasRegion bricks2;
         public final AtlasRegion bricks3;
         public final AtlasRegion bricks4;
+        public final AtlasRegion column;
 
         public DecorationAssets(TextureAtlas atlas){
             window = atlas.findRegion(Constants.WINDOW);
@@ -122,6 +123,7 @@ public class Assets implements Disposable, AssetErrorListener {
             bricks2 = atlas.findRegion(Constants.BRICKS2);
             bricks3 = atlas.findRegion(Constants.BRICKS3);
             bricks4 = atlas.findRegion(Constants.BRICKS4);
+            column = atlas.findRegion(Constants.COLUMN);
         }
     }
 

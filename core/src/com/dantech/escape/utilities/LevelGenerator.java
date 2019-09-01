@@ -90,23 +90,23 @@ public class LevelGenerator {
             //Bricks
             for(int i=0;i<120;i++){
                 if(i%5==1){
-                    Decoration brick = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,250)));
+                    Decoration brick = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
                     brick.setRegion(Assets.instance.decorationAssets.brick);
                     level.deco.add(brick);
                 }else if(i%5==2){
-                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,250)));
+                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
                     bricks.setRegion(Assets.instance.decorationAssets.bricks1);
                     level.deco.add(bricks);
                 }else if(i%5==3){
-                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,250)));
+                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
                     bricks.setRegion(Assets.instance.decorationAssets.bricks2);
                     level.deco.add(bricks);
                 }else if(i%5==4){
-                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,250)));
+                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
                     bricks.setRegion(Assets.instance.decorationAssets.bricks3);
                     level.deco.add(bricks);
                 } else {
-                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,250)));
+                    Decoration bricks = new Decoration(new Vector2(MathUtils.random(-100,800),MathUtils.random(0,200)));
                     bricks.setRegion(Assets.instance.decorationAssets.bricks4);
                     level.deco.add(bricks);
                 }
@@ -122,6 +122,15 @@ public class LevelGenerator {
                     decoPiece.setRegion(Assets.instance.decorationAssets.window);
                     level.deco.add(decoPiece);
                 }
+                if(decorationChild.get(i).get("type").asString().contains("column")){
+                    Decoration decoPiece = new Decoration(new Vector2(
+                            decorationChild.get(i).get("x").asFloat(),
+                            decorationChild.get(i).get("y").asFloat()));
+                    decoPiece.setRegion(Assets.instance.decorationAssets.column);
+                    level.deco.add(decoPiece);
+                }
+
+
             }
         } catch(Exception ex){
             Gdx.app.log("No decoration","flop" );
