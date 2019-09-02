@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -17,6 +18,7 @@ import com.badlogic.gdx.utils.TimeUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.dantech.escape.utilities.Assets;
 import com.dantech.escape.utilities.Constants;
+import com.dantech.escape.utilities.SoundManager;
 
 public class LevelScreen extends ScreenAdapter {
     Texture menuBackground;
@@ -54,6 +56,15 @@ public class LevelScreen extends ScreenAdapter {
                 button.addListener(new ClickListener() {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
+                        if (PreferenceManager.getSoundSettings()) {
+                            SoundManager.playClickSound();
+                            if(SoundManager.checkThemePlaying()){
+                                SoundManager.stopThemeMusic();
+                                SoundManager.disposeThemeMusic();
+                            }
+//
+//                            SoundManager.disposeClickSound();
+                        }
                         ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen(levelNumber));
 
                     }
@@ -67,7 +78,19 @@ public class LevelScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-
+        /////////
+        //MUSIC//
+        /////////
+        if(PreferenceManager.getSoundSettings()) {
+            try {
+            SoundManager.playThemeMusic();
+            SoundManager.initialiseClickSound();
+            } catch (Exception ex) {
+            SoundManager.initialiseThemeMusic();
+            SoundManager.playThemeMusic();
+            SoundManager.initialiseClickSound();
+            }
+        }
         ///
         ///
 
@@ -123,9 +146,7 @@ public class LevelScreen extends ScreenAdapter {
         ///
 
         sb.end();
-        if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
-            ((Game) Gdx.app.getApplicationListener()).setScreen(new PlayScreen(1));
-        }
+
     }
 
     @Override
